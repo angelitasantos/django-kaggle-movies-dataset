@@ -19,17 +19,17 @@ Base de Dados:
     <br />
     <div>
         <p><b>Passo 1</b> - criar a pasta<br />
-        - mkdir contact<br />
-        - cd contact<br />
+        - mkdir nome_pasta<br />
+        - cd nome_pasta<br />
         <p><b>Passo 2</b> - criar e acessar um ambiente virtual<br />
         - python3 -m venv .venv<br />
         - source .venv/bin/activate<br />
         <p><b>Passo 3</b> - instalar as dependências do Django e Django Rest Framework<br />
         - pip install django djangorestframework<br />
         <p><b>Passo 4</b> - criar o projeto (utilizar ponto para instalar no diretório atual)<br />
-        - django-admin startproject contact .<br />
+        - django-admin startproject nome_projeto .<br />
         <p><b>Passo 5</b> - criar o app<br />
-        - django-admin startapp people<br />
+        - django-admin startapp nome_app<br />
         <p><b>Passo 6</b> - criar as tabelas dentro do banco de dados<br />
         - python manage.py makemigrations<br />
         - python manage.py migrate<br />
@@ -40,21 +40,21 @@ Base de Dados:
         - adicionar 
         INSTALLED_APPS = [
             'rest_framework',
-            'people',
+            'nome_app',
         ]<br />
         <p><b>Passo 9</b> - criar o model do projeto no arquivo models.py<br />
-        - criar os campos da tabela de contatos<br />
+        - criar os campos da tabela do projeto<br />
         - importar a biblioteca from uuid import uuid4 para o campo id<br />
-        <p><b>Passo 10</b> - criar o arquivo serializers dentro da pasta people/api<br />
+        <p><b>Passo 10</b> - criar o arquivo serializers dentro da pasta nome_app/api<br />
         - from rest_framework import serializers<br />
-        - from people import models<br />
-        <p><b>Passo 11</b> - criar o arquivo viewsets dentro da pasta people/api<br />
+        - from nome_app import models<br />
+        <p><b>Passo 11</b> - criar o arquivo viewsets dentro da pasta nome_app/api<br />
         - from rest_framework import viewsets<br />
-        - from people.api import serializers<br />
-        - from people import models<br />
+        - from nome_app.api import serializers<br />
+        - from nome_app import models<br />
         <p><b>Passo 12</b> - criar as rotas no arquivo urls<br />
         - from rest_framework import routers<br />
-        - from people.api import viewsets as peopleviewsets<br />
+        - from nome_app.api import viewsets as nome_appviewsets<br />
         <p><b>Passo 13</b> - criar as tabelas do novo modelo dentro do banco de dados<br />
         - python manage.py makemigrations<br />
         - python manage.py migrate<br />
@@ -64,7 +64,7 @@ Base de Dados:
         - python manage.py makemigrations<br />
         - python manage.py migrate<br />
         <p><b>Passo 16</b> - incluir o model no admin.py<br />
-        - from .models import People<br />
+        - from .models import Nome_app<br />
         <p><b>Passo 17</b> - criar o super usuário<br />
         - python manage.py createsuperuser<br />
     </div>
@@ -76,7 +76,7 @@ Base de Dados:
         <p><b>Passo 18</b> - upload de imagens<br />
         - incluir nova coluna image no models.py<br />
         <p><b>Passo 19</b> - criar uma função para armazenar o nome do arquivo<br />
-        - def upload_image_people(instance, filename):<br />
+        - def upload_image_movie(instance, filename):<br />
         <p><b>Passo 20</b> - identificar aonde será armazenado as imagens no arquivo settings.py<br />
         - import os<br />
         - criar variáveis de ambiente<br />
@@ -101,12 +101,12 @@ Base de Dados:
         - verificar a versão: heroku --version<br />
         - logar: heroku login<br />
         <p><b>Passo 25</b> - criar um projeto dentro do heroku<br />
-        - heroku create django-api-contacts<br />
+        - heroku create django-api-movies<br />
         <p><b>Passo 26</b> - incluir a url dentro do arquivo settings.py<br />
-        - ALLOWED_HOSTS = ['https://django-api-contacts.herokuapp.com/']<br />
+        - ALLOWED_HOSTS = ['https://django-api-movies.herokuapp.com/']<br />
         <p><b>Passo 27</b> - criar o arquivo Procfile<br />
         - dentro da pasta root do projeto<br />
-        - para saber o nome do projeto: ROOT_URLCONF = 'contact.urls'<br />
+        - para saber o nome do projeto: ROOT_URLCONF = 'movies.urls'<br />
         <p><b>Passo 28</b> - instalar pacotes para ajudar a configurar o deploy<br />
         - pip install django-heroku<br />
         - pip install gunicorn<br />
