@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    {% include './pagination.html' %}
+    <div class="row">
+        <div class="col-md-12">
+            {% for movie in page_obj %}
+            <a href="{{ movie.imdb_url }}" class="btn btn-success btn-sm shadow p-2 mb-5 bg-white rounded" target="_blank">
+            <div class="card text-center" style="width: 7rem;">
+                <img class="" src="{{ movie.img_url }}" alt="Imagem de capa do card">
+            </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% include './pagination.html' %}
+</div>
