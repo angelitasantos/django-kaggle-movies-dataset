@@ -1,4 +1,4 @@
-<h1 align="center">API REST: Kaggle-Complete IMDB Movies</h1>
+<h1 align="center">Kaggle-Complete IMDB Movies</h1>
 <h2 align="center">Python, Django, Django Rest Framework</h2>
 
 
